@@ -9,6 +9,7 @@ const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 const Fortmatic = window.Fortmatic;
 const evmChains = window.evmChains;
+const WalletLink = window.WalletLink;
 
 // Web3modal instance
 let web3Modal
@@ -58,6 +59,20 @@ function init() {
       options: {
         // Mikko's TESTNET api key
         key: "pk_test_391E26A3B43A3350"
+      }
+    },
+    binancechainwallet: {
+      package: true
+    },
+    walletlink: {
+      package: WalletLink, // Required
+      options: {
+        appName: "My Awesome App", // Required
+        infuraId: "8043bb2cf99347b1bfadfb233c5325c0", // Required unless you provide a JSON RPC url; see `rpc` below
+        rpc: "", // Optional if `infuraId` is provided; otherwise it's required
+        chainId: 1, // Optional. It defaults to 1 if not provided
+        appLogoUrl: null, // Optional. Application logo image URL. favicon is used if unspecified
+        darkMode: false // Optional. Use dark theme, defaults to false
       }
     }
   };
